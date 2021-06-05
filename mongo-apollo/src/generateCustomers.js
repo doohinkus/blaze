@@ -6,7 +6,7 @@ import { mongoUri } from "./constants";
 import { resolvers } from "./resolvers";
 // MUST MATCH MODEL
 import { typeDefs } from "./typeDefs";
-// import generateFakeData from "./fakeData/addCustomers";
+import generateFakeData from "./fakeData/addCustomers";
 
 // MUST include URL for mongo ?authSource=admin 
 // monogURI points to DOCKER container
@@ -32,12 +32,17 @@ const startServer = async () => {
   })
     .then(() => {
       console.log("Connected to mongodb!!");
+
     })
     .catch(err => console.log("failed to connect to mongo ->", err));
   app.listen({ port: `${process.env.PORT}` }, () =>
     console.log(`🚀 Server ready at http://localhost:${process.env.PORT}${server.graphqlPath}`)
   );
-
+  // app.route('/add',(req, res, next) =>{
+  //   return res.json({
+  //       route: "Index"
+  //   });
+  // });
 
 };
 

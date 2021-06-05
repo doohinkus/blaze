@@ -1,13 +1,15 @@
-import React, {useEffect} from "react";
-import queryGraphQl from "./async/queryData";
+import React from "react";
+// import queryGraphQl from "./async/queryData";
 import CustomerTable from "./components/CustomerTable"
-import customerList from "./queries/index"
+import Pager from "./components/Pagination";
+// import customerList from "./queries/index"
 require("dotenv").config();
 
 function App() {
 
   return (
     <div className="">
+      {/* <Pager /> */}
       <CustomerTable />
     </div>
   );

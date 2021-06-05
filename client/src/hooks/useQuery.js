@@ -1,31 +1,26 @@
 
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import queryGraphQl from "../async/queryData";
-import isEmpty from "lodash"
 
-export default function useQuery({query}){
-  const [customersArray, setCustomerArray] = useState([]);
-    // load data
-   useEffect(() => {
-     async function fetchData() {
-     try {
-      //  console.log("QUER",query)
-       let customerData = await queryGraphQl({query});
-          // if(customerData && customerData.data && customerData.data.customers){
-          // } else {
-          //   setCustomerArray([]);
-          // }
-          setCustomerArray(customerData.customers);
-          console.log("Data>>", customerData.customers);
-        }
-        catch(err){
-          console.log(err);
-          setCustomerArray([])
-        }
-     }
-     fetchData();
-    
+export default function useQuery({ query }) {
+  const [customersData, setCustomerData] = useState([]);
+  // load data
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        //  console.log("QUER",query)
+        let customerData = await queryGraphQl({ query });
+        setCustomerData(customerData);
+        // console.log("Data>>", customerData);
+      }
+      catch (err) {
+        console.log(err);
+        setCustomerData([])
+      }
+    }
+    fetchData();
+
   }, []);
 
-  return [customersArray];
+  return { customersData };
 };

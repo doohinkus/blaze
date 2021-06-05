@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "addCusomters": "nodemon --exec babel-node src/fakeData/addCustomers.js",
+    "addCustomers": "nodemon --exec babel-node src/generateCustomers.js",
     "start": "nodemon --exec babel-node src/index.js"
   },
   "keywords": [],

@@ -1,8 +1,8 @@
 import axios from "axios";
-import {graphQlEndpoint}  from "../constants"
+import { graphQlEndpoint } from "../constants"
 
 // get customer page
-export default async function queryGraphQl({query}){
+export default async function queryGraphQl({ query }) {
   // console.log(query)
   try {
     const request = await axios({
@@ -16,9 +16,9 @@ export default async function queryGraphQl({query}){
     // console.log("query results>>", data)
     return data;
 
-  } catch (err){
-      console.log(err);
-      return []
+  } catch (err) {
+    console.log(err);
+    return []
   }
 
 }
