@@ -26,3 +26,4 @@ export default function generateFakeData(totalFakeRecords){
         );
     }
   }
+generateFakeData(3);
