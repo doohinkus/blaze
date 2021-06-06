@@ -45,11 +45,13 @@ docker stop <first four characters of container id>
 Run docker ps again to ensure the instance has stopped.
 
 ## Populate db
-With apollo and mongo running, open **index.js**
-Uncomment this line. Change the number to make more or fewer customers 
+To change the number of recorders, edit this line in **fakeData/addCustomers.js**
 ```
-// generateFakeData(3);
+generateFakeData(<desired customers to be generated>);
 
+```
+```
+npm run addCustomers
 ```
 Console should show updates.
 COMMENT the line! If you don't it will create records everytime a files changes. This is klunly part. I had to do this becuase I'm using Babel.
