@@ -1,6 +1,28 @@
 @import 'ag-grid-community/dist/styles/ag-grid.css';
 @import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
-html, body, div{
+/* @import-normalize; */
+ 
+html, body{
     height: 100%;
-    width: 100%;
+    /* overflow: hidden; */
+    /* width: 100%; */
+    /* display: block; */
+    /* overflow: auto; */
+}
+div{
+    /* width: 80%; */
+    height: 100%;
+}
+.ag-theme-alpine{
+    margin: auto;
+    width: 90%;
+    /* display: flex; */
+    height: 100%;
+}
+div:not([class~=ag-]){
+    /* display: flex; */
+    /* border: 1px solid red; */
+    /* margin: 1em; */
+    /* height: 100%; */
+    /* overflow: hidden; */
 }
