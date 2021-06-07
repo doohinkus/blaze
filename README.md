@@ -3,11 +3,11 @@
 * Dockerized (requires Docker and Docker Compose) mongodb
 * Setup and connected Apollo server to mongodb
 * Setup client with ag-grid-react and connected to Apollo server / api
+* Pagination - Wrote query, using mongoose/mongo utils for cursor based pagination. (tables uses client pagination--but query allows for any page size.)
 * Wrote mutations for CRUD operations
 * Added server side pagination 
 * Klunkily added a way to add customers / project uses BABEL, so the server must running. See directions.
 ## Todo/missing
-* ~~Pagination - Wrote query, using mongoose/mongo utils for cursor based pagination. ~~
 * Unit Tests 
 * Dockerize and deploy / CI CD pipeline
 * Add components / form for CRUD operation.
