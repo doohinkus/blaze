@@ -23,12 +23,12 @@ export default function CustomerTable() {
     const query = `
     {
       getPage(page:${page}, pageSize:${pageSize}){
-        firstName
-        lastName
-        phone
-        email
-      }
-      }
+          firstName
+          lastName
+          phone
+          email
+        }
+    }
     `
     fetchData(query);
   }
