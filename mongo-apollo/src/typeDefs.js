@@ -4,6 +4,7 @@ export const typeDefs = gql`
   type Query {
     customers: [Customer!]!
     getPage(page: Int!, pageSize: Int!): [Customer!]!
+    getCount: Int!
   }
   type Customer{
     id: ID!

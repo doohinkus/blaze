@@ -3,6 +3,17 @@ import { Customer } from "./models/Customer";
 export const resolvers = {
   Query: {
     customers: () => Customer.find(),
+    getCount: async () => {
+      try {
+        let count = await Customer.find({}).countDocuments();
+        // console.log(count)
+        return count;
+      } catch (err) {
+        console.log(err);
+        return 0;
+      }
+
+    },
     // must include _ as FIRST argument
     getPage(_, { page, pageSize }) {
       const PAGE_SIZE = pageSize;   // Similar to 'limit'

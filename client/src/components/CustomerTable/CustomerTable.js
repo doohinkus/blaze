@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { AgGridColumn, AgGridReact } from 'ag-grid-react';
 import useQuery from "../../hooks/useQuery";
+import useCount from "../../hooks/useCount";
 import { formatPhoneNumber } from "../../utils/helpers"
 import "./CustomerTable.css";
 
@@ -18,6 +19,7 @@ getPage(page:1, pageSize: 10){
 `
 export default function CustomerTable() {
   const { customersData, fetchData } = useQuery({ query: defaultQuery });
+  const { count } = useCount();
   function goToPage(page, pageSize) {
     const query = `
     {
@@ -26,7 +28,6 @@ export default function CustomerTable() {
         lastName
         phone
         email
-      
       }
       }
     `
@@ -35,7 +36,7 @@ export default function CustomerTable() {
   // console.log("cust", customersData.getPage)
 
   return <div className="wrapper">
-    <button onClick={() => goToPage(3, 14)}>page 2</button>
+    <button onClick={() => goToPage(3, 14)}>page 2</button> of {count}
     <div className="ag-theme-alpine" >
       <AgGridReact
         defaultColDef={{
