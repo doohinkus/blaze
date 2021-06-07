@@ -3,7 +3,7 @@ import { gql } from "apollo-server-express";
 export const typeDefs = gql`
   type Query {
     customers: [Customer!]!
-    getPage(page: Int!): [Customer!]!
+    getPage(page: Int!, pageSize: Int!): [Customer!]!
   }
   type Customer{
     id: ID!

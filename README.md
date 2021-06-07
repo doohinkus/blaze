@@ -50,16 +50,15 @@ To change the number of recorders, edit this line in **fakeData/addCustomers.js*
 generateFakeData(<desired customers to be generated>);
 
 ```
+Then run the following:
 ```
 npm run addCustomers
 ```
-Console should show updates.
-COMMENT the line! If you don't it will create records everytime a files changes. This is klunly part. I had to do this becuase I'm using Babel.
-This will NOT WORK becuase node doesn't "understand" ES6.
+Console should show updates. Stop the server. Then run the following command:
 ```
-node <addCustomers.js>
+npm run start
 ```
-As a result, I had to resort to the above. I'm exploring a way to fix this.
+COMMENT This is a klunky way to add customers, but since I'm using babel, it's the most convenient way to do it. I'm exploring a ways to add customers in a better way.
 
 # Running client
 cd into the **client** directory

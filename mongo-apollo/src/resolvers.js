@@ -4,15 +4,16 @@ export const resolvers = {
   Query: {
     customers: () => Customer.find(),
     // must include _ as FIRST argument
-    getPage(_, { page }) {
-      const PAGE_SIZE = 10;   // Similar to 'limit'
+    getPage(_, { page, pageSize }) {
+      const PAGE_SIZE = pageSize;   // Similar to 'limit'
       const skip = (page - 1) * PAGE_SIZE; // For page 1, the skip is: (1 - 1) * 20 => 0 * 20 = 0
       const results = async () => {
         try {
           let records = await Customer.find({})
             .skip(skip) // Same as before, always use 'skip' first
-            .limit(PAGE_SIZE)
-          // console.log(records, page)
+            .limit(PAGE_SIZE);
+          let count = await Customer.find({}).countDocuments();
+          console.log("records", { ...records, count }, page)
           return records
         } catch (err) {
           console.log("Error while fetching page ", err)

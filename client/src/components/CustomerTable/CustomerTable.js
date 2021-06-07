@@ -7,7 +7,7 @@ import "./CustomerTable.css";
 
 const defaultQuery = `
 {
-getPage(page:1){
+getPage(page:1, pageSize: 10){
   firstName
   lastName
   phone
@@ -18,10 +18,10 @@ getPage(page:1){
 `
 export default function CustomerTable() {
   const { customersData, fetchData } = useQuery({ query: defaultQuery });
-  function goToPage(page) {
+  function goToPage(page, pageSize) {
     const query = `
     {
-      getPage(page:${page}){
+      getPage(page:${page}, pageSize:${pageSize}){
         firstName
         lastName
         phone
@@ -35,7 +35,7 @@ export default function CustomerTable() {
   // console.log("cust", customersData.getPage)
 
   return <div className="wrapper">
-    <button onClick={() => goToPage(3)}>page 2</button>
+    <button onClick={() => goToPage(3, 14)}>page 2</button>
     <div className="ag-theme-alpine" >
       <AgGridReact
         defaultColDef={{
