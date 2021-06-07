@@ -8,13 +8,12 @@ import "./CustomerTable.css";
 
 const defaultQuery = `
 {
-getPage(page:1, pageSize: 10){
-  firstName
-  lastName
-  phone
-  email
-
-}
+  getPage(page:1, pageSize: 1000){
+    firstName
+    lastName
+    phone
+    email
+  }
 }
 `
 export default function CustomerTable() {
@@ -33,10 +32,9 @@ export default function CustomerTable() {
     `
     fetchData(query);
   }
-  // console.log("cust", customersData.getPage)
 
   return <div className="wrapper">
-    <button onClick={() => goToPage(3, 14)}>page 2</button> of {count}
+    {/* <button onClick={() => goToPage(3, 100)}>page 2</button> of {count} */}
     <div className="ag-theme-alpine" >
       <AgGridReact
         defaultColDef={{
@@ -52,10 +50,8 @@ export default function CustomerTable() {
         rowGroupPanelShow={'always'}
         pivotPanelShow={'always'}
         enableRangeSelection={true}
-        paginationAutoPageSize={true}
+        paginationPageSize={15}
         pagination={true}
-        // onGridReady={onGridReady}
-        // rowData={rowData}
         rowData={customersData.getPage}>
         <AgGridColumn field="firstName"></AgGridColumn>
         <AgGridColumn field="lastName"></AgGridColumn>

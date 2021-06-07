@@ -9,14 +9,12 @@ html, body{
     /* display: block; */
     /* overflow: auto; */
 }
-div{
-    /* width: 80%; */
+.ag-root-wrapper-body.ag-layout-normal{
     height: 100%;
 }
 .ag-theme-alpine{
     margin: auto;
     width: 90%;
-    /* display: flex; */
     height: 100%;
 }
 div:not([class~=ag-]){
