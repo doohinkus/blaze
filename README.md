@@ -5,12 +5,12 @@
 * Setup client with ag-grid-react and connected to Apollo server / api
 * Wrote mutations for CRUD operations
 * Added server side pagination 
-* Kunkily added a way to add customers / uses BABEL, so server must running. See directions.
+* Klunkily added a way to add customers / project uses BABEL, so the server must running. See directions.
 ## Todo/missing
-* ~~Pagination - Apollo has several ways to achieve it, I'm exloring options~~
-* Tests
+* ~~Pagination - Wrote query, using mongoose/mongo utils for cursor based pagination. ~~
+* Unit Tests 
 * Dockerize and deploy / CI CD pipeline
-* Add components / form for CRUD.
+* Add components / form for CRUD operation.
 ## Big stuggle was setting up Apollo and dockerizing mongo db
 # Run project 
 ## Run Mongo 
