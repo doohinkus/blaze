@@ -10,9 +10,12 @@ export default function AddCustomer() {
     };
 
     return <div>
-        For goes here
         <form onSubmit={handleSubmit(onSubmit)}>
             <Input label="First Name" register={register} required />
+            <Input label="Last Name" register={register} required />
+            <Input label="email" register={register} required />
+            <Input label="phone" register={register} required />
+            <input type="submit" />
         </form>
     </div>
 }
